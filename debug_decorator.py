@@ -11,9 +11,9 @@ def debug_decorator(func, *args, **kwargs):
         except ImportError as e_:
             print e_
             subprocess.call(["pip", "install", "ipdb"])
+            import ipdb
 
         print 'decorating'
-        import ipdb
         ipdb.set_trace()
         return func(*args, **kwargs)
     return inner_debug_decorator
