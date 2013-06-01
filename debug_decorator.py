@@ -23,7 +23,7 @@ def debug_decorator(func, *args, **kwargs):
 def print_function(input):
     a = 1
     b = 3
-    print 'I need some debuggin decorating, input = {}'.format(a + b + input)
+    print 'I need some debugging decorating, input = {}'.format(a + b + input)
 
 
 if __name__ == '__main__':
