@@ -16,21 +16,30 @@ def call_by_object_immutable(a):
     """
     a = 2
     print "a in function id = {}".format(id(a))
+    return id(a)
 
 
 def call_by_object_mutable(a):
     u""" http://effbot.org/zone/call-by-object.htm mutale example of list argument. """
     a.append(2)
     print "a in function id = {}".format(id(a))
+    return id(a)
 
 
-if __name__ == "__main__":
+def test_conditional_call_by_object():
+    u""" Test function to assert immutable and mutable parameters. """
+
     immu_a = 1
+    id_of_a = id(immu_a)
     print "before calling immu_a = {}, id = {}".format(immu_a, id(immu_a))
-    call_by_object_immutable(immu_a)
+    assert id_of_a != call_by_object_immutable(immu_a)
     print "after calling immu_a = {}, id = {}".format(immu_a, id(immu_a))
 
     mu_a = [1, 2, 3]
     print "before calling mu_a = {}, id = {}".format(mu_a, id(mu_a))
-    call_by_object_mutable(mu_a)
+    assert id(mu_a) == call_by_object_mutable(mu_a)
     print "after calling mu_a = {}, id = {}".format(mu_a, id(mu_a))
+
+
+if __name__ == "__main__":
+    test_conditional_call_by_object()
