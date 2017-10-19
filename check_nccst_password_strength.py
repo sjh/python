@@ -68,7 +68,7 @@ def test_nccst_password_functions():
     INVALID_PASSWORD_03 = "aa1234567890"
     INVALID_PASSWORD_04 = "aabbccAABBCC"
     VALID_PASSWORD_05 = "aA1234567890"  # Hope no one else use this as real password.
-    VALID_PASSWORD_06 = "aA123456789"  # Hope no one else use this as real password.
+    VALID_PASSWORD_06 = "aA1234567890B"  # Hope no one else use this as real password.
     VALID_PASSWORD_07 = "aA12345678901"  # Hope no one else use this as real password.
 
     for password in (INVALID_PASSWORD_01, INVALID_PASSWORD_02, INVALID_PASSWORD_03,
