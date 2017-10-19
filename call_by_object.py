@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # _*_ coding: utf-8 _*_
 
 u""" From first entry of https://github.com/taizilongxu/interview_python.
@@ -14,15 +14,17 @@ def call_by_object_immutable(a):
     u""" immutale example of integer argument.
          Python creates new immutable object in function namespace.
     """
+
     a = 2
-    print "a in function id = {}".format(id(a))
+    print("a in function id = {}".format(id(a)))
     return id(a)
 
 
 def call_by_object_mutable(a):
     u""" http://effbot.org/zone/call-by-object.htm mutale example of list argument. """
+
     a.append(2)
-    print "a in function id = {}".format(id(a))
+    print("a in function id = {}".format(id(a)))
     return id(a)
 
 
@@ -31,14 +33,14 @@ def test_conditional_call_by_object():
 
     immu_a = 1
     id_of_a = id(immu_a)
-    print "before calling immu_a = {}, id = {}".format(immu_a, id(immu_a))
+    print("before calling immu_a = {}, id = {}".format(immu_a, id(immu_a)))
     assert id_of_a != call_by_object_immutable(immu_a)
-    print "after calling immu_a = {}, id = {}".format(immu_a, id(immu_a))
+    print("after calling immu_a = {}, id = {}".format(immu_a, id(immu_a)))
 
     mu_a = [1, 2, 3]
-    print "before calling mu_a = {}, id = {}".format(mu_a, id(mu_a))
+    print("before calling mu_a = {}, id = {}".format(mu_a, id(mu_a)))
     assert id(mu_a) == call_by_object_mutable(mu_a)
-    print "after calling mu_a = {}, id = {}".format(mu_a, id(mu_a))
+    print("after calling mu_a = {}, id = {}".format(mu_a, id(mu_a)))
 
 
 if __name__ == "__main__":

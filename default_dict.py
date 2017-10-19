@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # _*_ coding: utf-8 _*_
 
 u""" One way of implementing default dictionary. """
@@ -12,12 +12,12 @@ class DefaultDict(dict):
 
 if __name__ == "__main__":
     d = DefaultDict()
-    print d, type(d), d.keys()
+    print(d, type(d), d.keys())
 
     d['flop'] = 127
-    print d, type(d), d.keys()
+    print(d, type(d), d.keys())
 
     d['flip'] = 130
-    print d, type(d), d.keys()
+    print(d, type(d), d.keys())
 
-    print d['no_value']
+    print(d['no_value'])

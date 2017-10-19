@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 #_*_ coding: utf-8 _*_
 
 
@@ -19,8 +19,9 @@ def print_exception_lineno():
     try:
         [][2]
     except IndexError as e:
-        print u'Error', e, ' on line {}'.format(sys.exc_info()[-1].tb_lineno)
+        print(u'Error', e, ' on line {}'.format(sys.exc_info()[-1].tb_lineno))
         LOGGER.exception(e)
+
 
 if __name__ == '__main__':
     print_exception_lineno()

@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # _*_ coding: utf-8 _*_
 
 from __future__ import print_function
@@ -21,6 +21,7 @@ def query_whoscall(phone_number):
         soup = BeautifulSoup(document, 'html.parser')
 
         title_string = soup.title.string.strip().split(' ')
+        print(u"title_string = {}".format(title_string))
         if len(title_string) == 12:
             owner_name = title_string[0]
             owner_phone = title_string[2]
