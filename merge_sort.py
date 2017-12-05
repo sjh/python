@@ -45,9 +45,7 @@ def merge_sort_list(alist):
 
     if length == 2:
         if alist[0] > alist[1]:
-            alist[0] ^= alist[1]
-            alist[1] ^= alist[0]
-            alist[0] ^= alist[1]
+            alist[0], alist[1] = alist[1], alist[0]
 
         return alist
 
