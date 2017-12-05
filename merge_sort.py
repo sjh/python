@@ -60,8 +60,15 @@ def merge_sort_list(alist):
     return sorted_list
 
 
-if __name__ == "__main__":
+def test_merge_sort():
+    """ Test driver using merge sort to sort unsorted list into sorted one. """
+
     source_list = [3, 2, 1, 5, 6, 10, 9, 8, 4, 7, 0]
     print("source list before sort = {}".format(source_list))
     sorted_list = merge_sort_list(source_list)
+    assert sorted_list == [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     print("sorted_list = {}".format(sorted_list))
+
+
+if __name__ == "__main__":
+    test_merge_sort()
