@@ -52,7 +52,7 @@ def merge_sort_list(alist):
     elif length == 1:
         return alist
 
-    half_length = int(length / 2)
+    half_length = length // 2
     first_half_list = alist[:half_length]
     second_half_list = alist[half_length:]
 
