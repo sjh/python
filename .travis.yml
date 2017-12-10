@@ -7,4 +7,4 @@ before-install:
     - pip install pytest pytest-cov
 
 script:
-    - py.test call_by_object.py check_nccst_password_strength.py merge_sort.py
+    - py.test call_by_object.py check_nccst_password_strength.py demo_https_ssl_encryption_parts.py merge_sort.py
