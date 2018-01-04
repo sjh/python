@@ -39,7 +39,7 @@ def query_whoscall(phone_number):
         ndp_container = site_main_container.contents[1]
         number_info = ndp_container.contents[3]
 
-        if (u"這個號碼還沒有被回報" == number_info.p.string.strip()):
+        if (number_info.p is None or u"這個號碼還沒有被回報" == number_info.p.string.strip()):
             print(u"這個號碼還沒有被回報")
 
         else:
