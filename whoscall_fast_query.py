@@ -48,16 +48,25 @@ def query_whoscall(phone_number):
             owner_name = number_info.h1.string.strip()
             number_info_ohours_addr = number_info.contents[5]
             all_spans = number_info_ohours_addr.findAll("span")
-            business_hour = all_spans[1].span.string
+            if all_spans:
+                business_hour = all_spans[1].span.string
+            else:
+                business_hour = None
 
             try:
-                address = all_spans[-1].string
+                if all_spans:
+                    address = all_spans[-1].string
+                else:
+                    address = None
 
             except(AttributeError):
                 address = u""
 
-            print("營業狀況: {}".format(business_hour))
-            print("地址: {}".format(address))
+            if business_hour:
+                print("營業狀況: {}".format(business_hour))
+
+            if address:
+                print("地址: {}".format(address))
 
     return True
 
