@@ -80,6 +80,10 @@ def test_query_whoscall():
 
 
 if __name__ == "__main__":
+    """
     if len(sys.argv) >= 2:
         for number in sys.argv[1:]:
             query_whoscall(number)
+    """
+    print("Whoscall web page has implemented Google ReCaptcha and cannot be used for command \
+            line interface now.")

@@ -7,4 +7,4 @@ before-install:
     - pip install -r requirements.txt
 
 script:
-    - py.test call_by_object.py check_nccst_password_strength.py demo_https_ssl_encryption_parts.py merge_sort.py whoscall_fast_query.py
+    - py.test call_by_object.py check_nccst_password_strength.py demo_https_ssl_encryption_parts.py merge_sort.py
