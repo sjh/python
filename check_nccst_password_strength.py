@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-u"""
+"""
 Reference:
     http://download.nccst.nat.gov.tw/attachfilehandout/%E8%AD%B0%E9%A1%8C%E4%B8%80%EF%BC%9A%E8%B3%87%E8%A8%8A%E7%B3%BB%E7%B5%B1%E5%A7%94%E5%A4%96%E5%AE%89%E5%85%A8%E9%9C%80%E6%B1%82%E8%88%87%E9%A9%97%E8%AD%89%E5%AF%A6%E5%8B%99.pdf
 

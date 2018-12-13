@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # _*_ coding: utf-8 _*_
 
-u""" From first entry of https://github.com/taizilongxu/interview_python.
+""" From first entry of https://github.com/taizilongxu/interview_python.
      Conditional call by object in python.
      Add id() function to illustrate if we are refering to the same or different objects in action.
 
@@ -11,7 +11,7 @@ u""" From first entry of https://github.com/taizilongxu/interview_python.
 
 
 def call_by_object_immutable(a):
-    u""" immutale example of integer argument.
+    """ immutale example of integer argument.
          Python creates new immutable object in function namespace.
     """
 
@@ -21,7 +21,7 @@ def call_by_object_immutable(a):
 
 
 def call_by_object_mutable(a):
-    u""" http://effbot.org/zone/call-by-object.htm mutale example of list argument. """
+    """ http://effbot.org/zone/call-by-object.htm mutale example of list argument. """
 
     a.append(2)
     print("a in function id = {}".format(id(a)))
@@ -29,7 +29,7 @@ def call_by_object_mutable(a):
 
 
 def test_conditional_call_by_object():
-    u""" Test function to assert immutable and mutable parameters. """
+    """ Test function to assert immutable and mutable parameters. """
 
     immu_a = 1
     id_of_a = id(immu_a)
