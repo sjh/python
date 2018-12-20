@@ -21,11 +21,11 @@ def find_text_files(directory):
             path_obj = Path(file_abspath)
             if path_obj.is_file():
                 result = subprocess.run(['file', "{}".format(file_abspath)], stdout=subprocess.PIPE)
-                if 'text' in result.stdout.decode('utf-8').split(':')[-1]:
-                    with open(file_abspath) as text_file:
+                if 'text' in result.stdout.decode('UTF-8').split(':')[-1]:
+                    print('** file path = {}'.format(file_abspath))
+                    with open(file_abspath, mode='r', encoding='UTF-8', errors='ignore') as text_file:
                         for line in text_file.readlines():
                             if len(line) < LINE_LIMIT:
-                                print('file path = {}'.format(file_abspath))
                                 print(line)
 
                     file_list.append("{}".format(file_abspath))
