@@ -1,20 +1,34 @@
 #!/usr/bin/env python3
 
 
+from pathlib import Path
 import os
 import subprocess
 import sys
 
+LINE_LIMIT = 100
+
 
 def find_text_files(directory):
-    ''' , '''
+    ''' find text files and look for file content less than 100 characters. '''
 
     file_list = []
     abspath = os.path.abspath(directory)
-    for i in os.listdir(directory):
-        result = subprocess.run(['file', "{}/{}".format(abspath, i)], stdout=subprocess.PIPE)
-        if 'text' in result.stdout.decode('utf-8').split(':')[-1]:
-            file_list.append(i)
+    files = [i[0] for i in os.walk(abspath)]
+    for i in os.walk(abspath):
+        for j in i[2]:
+            file_abspath = '{}/{}'.format(i[0], j)
+            path_obj = Path(file_abspath)
+            if path_obj.is_file():
+                result = subprocess.run(['file', "{}".format(file_abspath)], stdout=subprocess.PIPE)
+                if 'text' in result.stdout.decode('utf-8').split(':')[-1]:
+                    with open(file_abspath) as text_file:
+                        for line in text_file.readlines():
+                            if len(line) < LINE_LIMIT:
+                                print('file path = {}'.format(file_abspath))
+                                print(line)
+
+                    file_list.append("{}".format(file_abspath))
 
     return file_list
 
@@ -25,4 +39,3 @@ if __name__ == '__main__':
         sys.exit(1)
 
     results = find_text_files(sys.argv[1])
-    print(results)
