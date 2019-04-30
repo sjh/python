@@ -7,6 +7,7 @@ Python script to download pdf slides from ithome cyber security events.
 import os
 from pathlib import Path
 import sys
+from urllib.parse import unquote
 
 from bs4 import BeautifulSoup
 import requests
@@ -27,9 +28,7 @@ def download_slides(page_url=None):
             slide_link = link['href']
             print('Trying to download file from link: {}'.format(slide_link))
             base_name = slide_link.split('/')[-1]
-            if len(base_name) > 255:
-                base_name = base_name[-255:]
-
+            base_name = unquote(base_name)
             file_name = '{}/{}'.format(PREFIX_DIR, base_name)
             local_path = Path(file_name)
             if local_path.is_file() and local_path.exists():
